@@ -1,0 +1,22 @@
+mixin nav-content()
+	ul
+		li: a(href="#about") About
+		li: a(href="#mylife") MyLife
+		li: a(href="#hireme") HireMe
+		li: a(href="#about") Resume
+		li: a(href="#about") ContactMe
+		li: a(href="#about") About
+
+.mobile-nav
+	+nav-content()
+
+header
+	.header-position
+		h1.logo PY	
+		nav.site-nav
+			+nav-content()
+
+		a(href="mailto: mailmeonlypraveen@gmail.com").email-link +email me	
+
+		.mobile-nav-toggle
+			span 

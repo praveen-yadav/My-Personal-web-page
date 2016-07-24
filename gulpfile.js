@@ -42,7 +42,7 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('sass', function () {
-    return gulp.src('assets/css/main.scss')
+    return gulp.src('assets/css/*')
         .pipe(sass({
             includePaths: ['css'],
             onError: browserSync.notify
@@ -61,7 +61,7 @@ gulp.task('jade',function(){
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('assets/css/*', ['sass']);
+    gulp.watch(['assets/css/*.sass','assets/css/1-base/*.sass','assets/css/2-modules/*.sass','assets/css/3-layouts/*.sass'], ['sass']);
     gulp.watch(['*.html', '_layouts/*.html', '_posts/*' ,'_includes/*'], ['jekyll-rebuild']);
     gulp.watch(['_jadefiles/*.jade','_includes/*'], ['jade']);
 });

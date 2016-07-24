@@ -1,0 +1,124 @@
+.home-wrap 
+	header
+		width: 135px
+		padding: 30px 0
+
+		.header-position
+			background: white
+			position: fixed
+			top: 0px
+			left: 0px
+			bottom: 0px
+			display: flex
+			width: 135px
+			flex-direction: column
+			justify-content: space-between	
+		.logo
+			height: 80px
+			background: #DCE
+			text-align: center
+			padding: 0
+			margin: 0
+			size: contain
+		.site-nav				
+			ul			
+				margin: 20px 0px
+				list-style: none
+				text-align: right
+				padding: 0 20px 0 0
+
+				li
+					margin-bottom: 10px
+					&:last-child
+						margin-bottom: 0px
+		.email-link
+			display: block
+			text-align: right
+			padding-right: 20px
+
+		.mobile-nav-toggle
+			display: none
+
+	.mobile-nav
+		position: absolute
+		width: 100%
+		background: white
+		display: none
+		padding: 30px 0 20px
+		transform: translateY(-100%)
+		transition: all 0.3s ease-in-out
+		ul
+			list-style: none
+			padding: 0
+			margin: 0
+		li
+			text-align: center
+			margin-botton: 10px
+
+@media (max-width: 775px)
+	.home-wrap 
+		header
+			width: auto		
+
+			.header-position
+				width: 100%
+				position: absolute
+				top: 0px
+				bottom: auto
+				left: auto
+				flex-direction: row
+				align-items: center
+
+			.site-nav , .email-link
+				display: none
+
+
+			.logo
+				max-width: 135px
+				font-size: 45px
+				size: contain
+				height: auto
+				margin-left: 10px
+				background: none
+			
+			.mobile-nav-toggle
+				width: 50px
+				height: 50px
+				//background: pink
+				margin-right: 20px
+				display: flex
+				align-items: center
+				cursor: pointer
+
+				span,
+				span:before,
+				span:after
+					content: ""
+					display: block
+					width: 100%
+					height: 3px
+					background: #333
+					position: relative
+
+					transition: all 0.3s ease-in-out
+				span:before
+					top: 15px
+
+				span:after
+					top: -17px
+
+				&:hover span
+					background: transparent
+				
+				&:hover span:before
+					transform: rotate(45deg)	
+					top: 0
+
+				&:hover span:after				
+					transform: rotate(-45deg)
+					top: 0
+
+
+		.mobile-nav.is-open
+			display: block
+			transform: translateY(0%)
